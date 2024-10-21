@@ -1,0 +1,15 @@
+services:
+  samba:
+    image: crazymax/samba
+    container_name: samba
+    environment:
+      - "TZ=Europe/Vienna"
+      - "SAMBA_LOG_LEVEL=0"
+      - "SAMBA_HOSTS_ALLOW=127.0.0.0/8 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 100.0.0.0/8"
+    restart: unless-stopped
+    ports:
+      - "445:445"
+    volumes:
+      - "$PWD/config.yml:/data/config.yml"
+      - "/mnt/hdd/media:/samba/media"
+      - "/mnt/hdd/stash:/samba/stash"

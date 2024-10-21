@@ -1,0 +1,22 @@
+volumes:
+  data:
+
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Vienna
+      - WEBUI_PORT=1234
+    volumes:
+      - data:/config
+      - /mnt/hdd/media:/downloads
+    ports:
+      - 1234:1234
+      - 6881:6881
+      - 6881:6881/udp
+      - 30054:30054
+      - 30054-30054/udp
+    restart: unless-stopped

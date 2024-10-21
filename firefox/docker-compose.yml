@@ -1,0 +1,12 @@
+volumes:
+  data:
+
+services:
+    firefox:
+        image: jlesage/firefox
+        container_name: firefox
+        restart: unless-stopped
+        volumes:
+            - data:/config:rw
+        ports:
+            - '5800:5800'

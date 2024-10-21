@@ -1,0 +1,21 @@
+networks:
+  proxy:
+    external: true
+
+volumes:
+  data:
+
+services:
+  app:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    networks:
+      - proxy
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - data:/data
