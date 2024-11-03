@@ -17,5 +17,5 @@ services:
     networks:
       - proxy
     volumes:
-      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - /srv/docker/caddy/Caddyfile:/etc/caddy/Caddyfile
       - data:/data
