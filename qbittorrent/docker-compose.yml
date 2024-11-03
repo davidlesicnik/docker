@@ -3,7 +3,7 @@ volumes:
 
 services:
   qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent:latest
+    image: lscr.io/linuxserver/qbittorrent:5.0.1
     container_name: qbittorrent
     environment:
       - PUID=1000
