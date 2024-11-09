@@ -7,6 +7,7 @@ services:
       - LANG=en
       - WG_HOST=vpn.lesicnik.eu
       - PASSWORD_HASH=${WIREGUARD_PW}
+      - WG_ALLOWED_IPS=192.168.10.0/24
 
     image: ghcr.io/wg-easy/wg-easy
     container_name: wireguard
