@@ -1,3 +1,2 @@
 plex/.env
-immich/.env
-samba/config.yml
+wireguard/.env
