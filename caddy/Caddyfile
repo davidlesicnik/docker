@@ -1,0 +1,3 @@
+photos.lesicnik.eu {
+    reverse_proxy 192.168.10.21:2283
+}
