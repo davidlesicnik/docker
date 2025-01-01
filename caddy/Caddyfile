@@ -5,3 +5,7 @@ photos.lesicnik.eu {
 actual.lesicnik.eu {
     reverse_proxy 192.168.10.21:5006
 }
+
+ha.lesicnik.eu {
+    reverse_proxy 192.168.10.23:8123
+}
